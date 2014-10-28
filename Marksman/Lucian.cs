@@ -48,6 +48,7 @@ namespace Marksman
             else if (spell.SData.Name.Contains("Lucian") && !spell.SData.Name.Contains("Attack"))
             {
                 Orbwalking.ResetAutoAttackTimer();
+                 Utils.PrintMessage(spell.SData.Name);
 
                 Utility.DelayAction.Add(6000, () =>
                 {
