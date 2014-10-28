@@ -35,6 +35,8 @@ namespace Marksman
         {
             if (!unit.IsMe) return;
             if (spell.SData.Name.Contains("summoner")) return;
+            if (DoubleHit)
+            Utils.PrintMessage("passive up");
 
             if (spell.SData.Name.Contains("Attack"))
             {
@@ -62,7 +64,7 @@ namespace Marksman
 
         public bool LucianHasPassive()
         {
-            return Config.Item("Passive" + Id).GetValue<bool>() && DoubleHit;
+            return DoubleHit;
         }
 
         public static Obj_AI_Base QMinion
