@@ -38,7 +38,7 @@ namespace Marksman
             
             if (spell.SData.Name.Contains("Attack"))
             {
-                Utility.DelayAction.Add(50, () =>
+                Utility.DelayAction.Add(500, () =>
                 {
                     DoubleHit = false;
                     Utility.DelayAction.ActionList.Clear();
