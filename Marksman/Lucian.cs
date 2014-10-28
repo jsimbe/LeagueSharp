@@ -62,7 +62,7 @@ namespace Marksman
 
         public bool LucianHasPassive()
         {
-            return ObjectManager.Player.Buffs.All(buff => buff.Name == "lucianpassivebuff");
+            return ObjectManager.Player.HasBuff("lucianpassivebuff");
         }
 
         public static Obj_AI_Base QMinion
@@ -120,7 +120,7 @@ namespace Marksman
 
         public override void Game_OnGameUpdate(EventArgs args)
         {
-            if (DoubleHit)
+            if (LucianHasPassive())
             Utils.PrintMessage("passive up");
 
             if (Q.IsReady() && GetValue<KeyBind>("UseQTH").Active)
