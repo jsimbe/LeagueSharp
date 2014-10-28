@@ -35,9 +35,7 @@ namespace Marksman
         {
             if (!unit.IsMe) return;
             if (spell.SData.Name.Contains("summoner")) return;
-            if (DoubleHit)
-            Utils.PrintMessage("passive up");
-
+            
             if (spell.SData.Name.Contains("Attack"))
             {
                 Utility.DelayAction.Add(50, () =>
@@ -122,6 +120,8 @@ namespace Marksman
 
         public override void Game_OnGameUpdate(EventArgs args)
         {
+            if (DoubleHit)
+            Utils.PrintMessage("passive up");
 
             if (Q.IsReady() && GetValue<KeyBind>("UseQTH").Active)
             {
