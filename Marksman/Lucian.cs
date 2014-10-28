@@ -62,7 +62,7 @@ namespace Marksman
 
         public bool LucianHasPassive()
         {
-            return PUC.Player.Buffs.Any(buff => buff.Name == "lucianpassivebuff");
+            return ObjectManager.Player.Buffs.Any(buff => buff.Name == "lucianpassivebuff");
         }
 
         public static Obj_AI_Base QMinion
