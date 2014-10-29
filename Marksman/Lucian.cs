@@ -121,7 +121,7 @@ namespace Marksman
         public override void Game_OnGameUpdate(EventArgs args)
         {
             if (LucianHasPassive())
-            Utils.PrintMessage("passive up");
+            return;
 
             if (Q.IsReady() && GetValue<KeyBind>("UseQTH").Active)
             {
